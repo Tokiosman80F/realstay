@@ -3,15 +3,15 @@ import { NavLink } from "react-router-dom";
 
 const Header = () => {
   const navLink = [
-    { name: "Home", to: "/", title: "Home" },
-    { name: "About", to: "/About", title: "About" },
-    { name: "Rentals", to: "/Rentals", title: "Rentals" },
-    { name: "Testimonial", to: "/Testimonial", title: "Testimonial" },
-    { name: "Blog", to: "/Blog", title: "Blog" },
-    { name: "Contact Us", to: "/Contact", title: "Contact" },
+    { name: "Home", to: "/", title: "Home", isActive:({ isActive }) => isActive ? "text-blue-500" : "default" },
+    { name: "About", to: "/About", title: "About",isActive:({ isActive }) =>isActive ? "text-blue-500 " : "default" },
+    { name: "Rentals", to: "/Rentals", title: "Rentals",isActive:({ isActive }) =>isActive ? "text-blue-500 " : "default" },
+    { name: "Testimonial", to: "/Testimonial", title: "Testimonial",isActive:({ isActive }) =>isActive ? "text-blue-500 " : "default" },
+    { name: "Blog", to: "/Blog", title: "Blog",isActive:({ isActive }) =>isActive ? "text-blue-500 " : "default" },
+    { name: "Contact Us", to: "/Contact", title: "Contact",isActive:({ isActive }) =>isActive ? "text-blue-500 " : "default" }
   ];
   return (
-    <div className='navbar bg-slate-300'>
+    <div className='navbar bg-slate-300 mt-5 rounded-lg'>
       <div className='navbar-start'>
         <div className='dropdown'>
           <label tabIndex={0} className='btn btn-ghost lg:hidden'>
@@ -32,44 +32,36 @@ const Header = () => {
           <ul
             tabIndex={0}
             className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52'>
-            <li>
-              <a>Item 1</a>
-            </li>
-            <li>
-              <a>Parent</a>
-              <ul className='p-2'>
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a>Item 3</a>
-            </li>
+            {navLink.map((item, id) => (
+              <li key={id}>
+                <NavLink
+                  to={item.to}
+                  className={item.isActive}>
+                  {item.name}
+                </NavLink>
+              </li>
+            ))}
           </ul>
         </div>
         <a className='btn btn-ghost normal-case text-xl'>
-          <FaHouseChimneyCrack color="lightblue" /> Real-Stay
+          <FaHouseChimneyCrack color='royalblue' /> Real-Stay
         </a>
       </div>
       <div className='navbar-center hidden lg:flex'>
         <ul className='menu menu-horizontal px-1'>
-        {navLink.map((item,id)=>(
-        <li key={id}>
-          <NavLink
-            to={item.to}
-            className={({ isActive }) =>
-              isActive ? "text-blue-500 " : "default"
-            }>{item.name}</NavLink>
-        </li>))}
-
+          {navLink.map((item, id) => (
+            <li key={id}>
+              <NavLink
+                to={item.to}
+               className={item.isActive}>
+                {item.name}
+              </NavLink>
+            </li>
+          ))}
         </ul>
       </div>
       <div className='navbar-end'>
-        <a className='btn'>Button</a>
+        <a className='btn btn-info'>Sign In</a>
       </div>
     </div>
   );
