@@ -4,9 +4,11 @@ import Footer from "../pages/Shared/Footer"
 
 const Main = () => {
     return (
-      <div className="px-10">
+      <div className='px-10'>
         <Header></Header>
-        <Outlet></Outlet>
+        <div className="min-h-[calc(100vh-450px)]">
+          <Outlet></Outlet>
+        </div>
         <Footer></Footer>
       </div>
     );

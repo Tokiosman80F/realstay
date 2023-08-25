@@ -4,11 +4,11 @@ import { NavLink } from "react-router-dom";
 const Header = () => {
   const navLink = [
     { name: "Home", to: "/", title: "Home", isActive:({ isActive }) => isActive ? "text-blue-500" : "default" },
-    { name: "About", to: "/About", title: "About",isActive:({ isActive }) =>isActive ? "text-blue-500 " : "default" },
-    { name: "Rentals", to: "/Rentals", title: "Rentals",isActive:({ isActive }) =>isActive ? "text-blue-500 " : "default" },
-    { name: "Testimonial", to: "/Testimonial", title: "Testimonial",isActive:({ isActive }) =>isActive ? "text-blue-500 " : "default" },
-    { name: "Blog", to: "/Blog", title: "Blog",isActive:({ isActive }) =>isActive ? "text-blue-500 " : "default" },
-    { name: "Contact Us", to: "/Contact", title: "Contact",isActive:({ isActive }) =>isActive ? "text-blue-500 " : "default" }
+    { name: "About", to: "/about", title: "About",isActive:({ isActive }) =>isActive ? "text-blue-500 " : "default" },
+    { name: "Rentals", to: "/rentals", title: "Rentals",isActive:({ isActive }) =>isActive ? "text-blue-500 " : "default" },
+    { name: "Testimonial", to: "/testimonial", title: "Testimonial",isActive:({ isActive }) =>isActive ? "text-blue-500 " : "default" },
+    { name: "Blog", to: "/blog", title: "Blog",isActive:({ isActive }) =>isActive ? "text-blue-500 " : "default" },
+    { name: "Contact Us", to: "/contact", title: "Contact",isActive:({ isActive }) =>isActive ? "text-blue-500 " : "default" }
   ];
   return (
     <div className='navbar bg-slate-300 mt-5 rounded-lg'>
